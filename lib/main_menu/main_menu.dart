@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:carousel_pro/carousel_pro.dart';
 
 class MainMenuPage extends StatefulWidget {
   @override
@@ -94,7 +95,106 @@ class _MainMenuPageState extends State<MainMenuPage> {
                   ),
                 ),
               ),
-              Container(),
+              Container(
+                padding: EdgeInsets.all(20),
+                child: SizedBox(
+                  height: 200.0,
+                  width: 350.0,
+                  child: Carousel(
+                    images: [
+                      Container(
+                        constraints: new BoxConstraints.expand(
+                          height: 200.0,
+                        ),
+                        padding: new EdgeInsets.only(
+                            left: 16.0, bottom: 8.0, right: 16.0),
+                        decoration: new BoxDecoration(
+                          image: new DecorationImage(
+                            image: new AssetImage('assets/img/News_1.jpg'),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        child: new Stack(
+                          children: <Widget>[
+                            new Positioned(
+                              left: 0.0,
+                              bottom: 0.0,
+                              child: new Text('News 1',
+                                  style: new TextStyle(
+                                    color: Colors.white70,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20.0,
+                                  )),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        constraints: new BoxConstraints.expand(
+                          height: 200.0,
+                        ),
+                        padding: new EdgeInsets.only(
+                            left: 16.0, bottom: 8.0, right: 16.0),
+                        decoration: new BoxDecoration(
+                          image: new DecorationImage(
+                            image: new AssetImage('assets/img/News_2.jpg'),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        child: new Stack(
+                          children: <Widget>[
+                            new Positioned(
+                              left: 0.0,
+                              bottom: 0.0,
+                              child: new Text('News 2',
+                                  style: new TextStyle(
+                                    color: Colors.white70,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20.0,
+                                  )),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        constraints: new BoxConstraints.expand(
+                          height: 200.0,
+                        ),
+                        padding: new EdgeInsets.only(
+                            left: 16.0, bottom: 8.0, right: 16.0),
+                        decoration: new BoxDecoration(
+                          image: new DecorationImage(
+                            image: new AssetImage('assets/img/News_3.jpg'),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        child: new Stack(
+                          children: <Widget>[
+                            new Positioned(
+                              left: 0.0,
+                              bottom: 0.0,
+                              child: new Text('News 3',
+                                  style: new TextStyle(
+                                    color: Colors.white70,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20.0,
+                                  )),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                    dotPosition: DotPosition.bottomRight,
+                    autoplay: true,
+                    dotSize: 4.0,
+                    dotSpacing: 15.0,
+                    dotColor: Colors.black,
+                    indicatorBgPadding: 5.0,
+                    dotBgColor: Colors.grey.withOpacity(0.8),
+                    // borderRadius: true,
+                  ),
+                ),
+              ),
             ],
           ),
         ),
