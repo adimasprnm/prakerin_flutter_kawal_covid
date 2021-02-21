@@ -7,30 +7,42 @@ class MainMenuPage extends StatefulWidget {
 }
 
 class _MainMenuPageState extends State<MainMenuPage> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.redAccent[700],
-          leading: Icon(
-            Icons.sort,
+          leading: IconButton(
+            icon: Icon(
+              Icons.toc_outlined,
+            ),
+            onPressed: () => _scaffoldKey.currentState.openDrawer(),
           ),
           title: Text(
             "Kawal Covid",
           ),
         ),
+        key: _scaffoldKey,
         drawer: Drawer(
-          // Add a ListView to the drawer. This ensures the user can scroll
-          // through the options in the drawer if there isn't enough vertical
-          // space to fit everything.
           child: ListView(
-            // Important: Remove any padding from the ListView.
             padding: EdgeInsets.zero,
             children: <Widget>[
               DrawerHeader(
-                child: Text('Drawer Header'),
-                padding: EdgeInsets.all(20),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    image: new DecorationImage(
+                      image: AssetImage(
+                        'assets/img/drawer_head.jpeg',
+                      ),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+                padding: EdgeInsets.all(0),
                 decoration: BoxDecoration(
                   color: Colors.red[700],
                 ),
@@ -38,21 +50,25 @@ class _MainMenuPageState extends State<MainMenuPage> {
               ListTile(
                 leading: Icon(Icons.table_chart_outlined),
                 title: Text('Data table Kasus Indonesia'),
+                trailing: Icon(Icons.keyboard_arrow_right),
                 onTap: () {},
               ),
               ListTile(
                 leading: Icon(Icons.blur_circular_rounded),
                 title: Text('Data Table Kasus Dunia'),
+                trailing: Icon(Icons.keyboard_arrow_right),
                 onTap: () {},
               ),
               ListTile(
                 leading: Icon(Icons.add_ic_call_rounded),
                 title: Text('Hotline Hospital Emergency'),
+                trailing: Icon(Icons.keyboard_arrow_right),
                 onTap: () {},
               ),
               ListTile(
                 leading: Icon(Icons.account_box_outlined),
                 title: Text('Abous Us'),
+                trailing: Icon(Icons.keyboard_arrow_right),
                 onTap: () {},
               ),
             ],
@@ -64,9 +80,14 @@ class _MainMenuPageState extends State<MainMenuPage> {
             children: <Widget>[
               Card(
                 child: Container(
-                  color: Colors.yellow[600],
+                  margin: EdgeInsets.all(10),
+                  padding: EdgeInsets.all(10),
+                  color: Colors.red[600],
                   child: ListTile(
-                    title: Text("Positif"),
+                    title: Text(
+                      "Positif",
+                      style: TextStyle(color: Colors.white),
+                    ),
                     leading: CircleAvatar(
                       backgroundImage: AssetImage('assets/icons/positif.png'),
                     ),
@@ -75,9 +96,14 @@ class _MainMenuPageState extends State<MainMenuPage> {
               ),
               Card(
                 child: Container(
-                  color: Colors.greenAccent[700],
+                  margin: EdgeInsets.all(10),
+                  padding: EdgeInsets.all(10),
+                  color: Colors.green[800],
                   child: ListTile(
-                    title: Text("Sembuh"),
+                    title: Text(
+                      "Sembuh",
+                      style: TextStyle(color: Colors.white),
+                    ),
                     leading: CircleAvatar(
                       backgroundImage: AssetImage('assets/icons/sembuh.png'),
                     ),
@@ -86,9 +112,14 @@ class _MainMenuPageState extends State<MainMenuPage> {
               ),
               Card(
                 child: Container(
-                  color: Colors.red[700],
+                  margin: EdgeInsets.all(10),
+                  padding: EdgeInsets.all(10),
+                  color: Colors.purple[900],
                   child: ListTile(
-                    title: Text("Meninggal"),
+                    title: Text(
+                      "Meninggal",
+                      style: TextStyle(color: Colors.white),
+                    ),
                     leading: CircleAvatar(
                       backgroundImage: AssetImage('assets/icons/meninggal.png'),
                     ),
