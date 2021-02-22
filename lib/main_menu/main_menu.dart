@@ -4,6 +4,7 @@ import 'package:flutter_kawal_covid/about/about_view.dart';
 import 'package:flutter_kawal_covid/emergency_hotline/emergency_hotline.dart';
 import 'package:flutter_kawal_covid/international_data/international_data.dart';
 import 'package:flutter_kawal_covid/national_data/national_data.dart';
+import 'package:flutter_kawal_covid/api/post_positif.dart';
 
 class MainMenuPage extends StatefulWidget {
   @override
@@ -119,7 +120,7 @@ class _MainMenuPageState extends State<MainMenuPage> {
                 child: Container(
                   margin: EdgeInsets.all(10),
                   padding: EdgeInsets.all(10),
-                  color: Colors.red[600],
+                  color: Colors.red[900],
                   child: ListTile(
                     title: Text(
                       "Positif",
