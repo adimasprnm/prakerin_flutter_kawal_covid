@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
+import 'package:flutter_kawal_covid/about/about_view.dart';
+import 'package:flutter_kawal_covid/emergency_hotline/emergency_hotline.dart';
+import 'package:flutter_kawal_covid/international_data/international_data.dart';
+import 'package:flutter_kawal_covid/national_data/national_data.dart';
 
 class MainMenuPage extends StatefulWidget {
   @override
@@ -51,33 +55,66 @@ class _MainMenuPageState extends State<MainMenuPage> {
                 leading: Icon(Icons.table_chart_outlined),
                 title: Text('Data table Kasus Indonesia'),
                 trailing: Icon(Icons.keyboard_arrow_right),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => NationalDataPage()),
+                  );
+                },
               ),
               ListTile(
                 leading: Icon(Icons.blur_circular_rounded),
                 title: Text('Data Table Kasus Dunia'),
                 trailing: Icon(Icons.keyboard_arrow_right),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => InterNationalDataPage()),
+                  );
+                },
               ),
               ListTile(
                 leading: Icon(Icons.add_ic_call_rounded),
                 title: Text('Hotline Hospital Emergency'),
                 trailing: Icon(Icons.keyboard_arrow_right),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => EmergencyHotlinePage()),
+                  );
+                },
               ),
               ListTile(
                 leading: Icon(Icons.account_box_outlined),
-                title: Text('Abous Us'),
+                title: Text('About Us'),
                 trailing: Icon(Icons.keyboard_arrow_right),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => AboutPage()),
+                  );
+                },
               ),
             ],
           ),
         ),
         body: Container(
-          padding: EdgeInsets.only(top: 20),
           child: ListView(
             children: <Widget>[
+              Container(
+                width: 200,
+                height: 200,
+                child: Center(
+                  child: Text(
+                    "KAWAL CORONA",
+                    style: TextStyle(
+                      fontSize: 40,
+                    ),
+                  ),
+                ),
+              ),
               Card(
                 child: Container(
                   margin: EdgeInsets.all(10),
