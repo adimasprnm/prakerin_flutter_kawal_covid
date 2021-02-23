@@ -66,6 +66,7 @@ flutter:
     - assets/img/News_3.jpg
     - assets/img/drawer_head.jpeg
     - assets/img/logo-sekolah.png
+    - assets/icons/logo_bandung.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 
