@@ -4,9 +4,10 @@ import 'package:flutter_kawal_covid/about/about_view.dart';
 import 'package:flutter_kawal_covid/emergency_hotline/emergency_hotline.dart';
 import 'package:flutter_kawal_covid/international_data/international_data.dart';
 import 'package:flutter_kawal_covid/national_data/national_data.dart';
-import 'package:flutter_kawal_covid/api/post_positif.dart';
 
 class MainMenuPage extends StatefulWidget {
+  MainMenuPage({Key key}) : super(key: key);
+
   @override
   _MainMenuPageState createState() => _MainMenuPageState();
 }
@@ -120,11 +121,17 @@ class _MainMenuPageState extends State<MainMenuPage> {
                 child: Container(
                   margin: EdgeInsets.all(10),
                   padding: EdgeInsets.all(10),
-                  color: Colors.red[900],
+                  color: Colors.red[800],
                   child: ListTile(
                     title: Text(
                       "Positif",
                       style: TextStyle(color: Colors.white),
+                    ),
+                    subtitle: Text(
+                      "200.000.000 jiwa",
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
                     ),
                     leading: CircleAvatar(
                       backgroundImage: AssetImage('assets/icons/positif.png'),
@@ -142,6 +149,12 @@ class _MainMenuPageState extends State<MainMenuPage> {
                       "Sembuh",
                       style: TextStyle(color: Colors.white),
                     ),
+                    subtitle: Text(
+                      "200.000.000 jiwa",
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                    ),
                     leading: CircleAvatar(
                       backgroundImage: AssetImage('assets/icons/sembuh.png'),
                     ),
@@ -157,6 +170,12 @@ class _MainMenuPageState extends State<MainMenuPage> {
                     title: Text(
                       "Meninggal",
                       style: TextStyle(color: Colors.white),
+                    ),
+                    subtitle: Text(
+                      "200.000.000 jiwa",
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
                     ),
                     leading: CircleAvatar(
                       backgroundImage: AssetImage('assets/icons/meninggal.png'),
@@ -262,6 +281,47 @@ class _MainMenuPageState extends State<MainMenuPage> {
                     dotBgColor: Colors.grey.withOpacity(0.8),
                     // borderRadius: true,
                   ),
+                ),
+              ),
+              Container(
+                child: Container(
+                  height: 200,
+                  width: 500,
+                  color: Colors.black,
+                  child: Stack(
+                    children: <Widget>[
+                      Container(
+                        alignment: Alignment.topCenter,
+                        child: Image(
+                          image: AssetImage(
+                            'assets/img/logo-sekolah.png',
+                          ),
+                          height: 125,
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.only(bottom: 50),
+                        alignment: Alignment.bottomCenter,
+                        child: Text(
+                          "Powered by SMK ASSALAAM BANDUNG",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 15,
+                          ),
+                          textAlign: TextAlign.end,
+                        ),
+                      ),
+                    ],
+                  ),
+                  // child: Center(
+                  //   child: Image(
+                  //     image: AssetImage(
+                  //       'assets/img/logo-sekolah.png',
+                  //     ),
+                  //     height: 120,
+                  //     alignment: Alignment.topCenter,
+                  //   ),
+                  // ),
                 ),
               ),
             ],
